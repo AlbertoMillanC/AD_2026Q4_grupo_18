@@ -1,0 +1,2775 @@
+{
+  "name": "VariantWise Open Dataset: Indian road tax and on-road charges",
+  "description": "State road tax tables, national charges and city registration detail powering the on-road price breakdowns on https://variantwise.com. Scope is an individual buyer's first private car.",
+  "homepage": "https://variantwise.com/data",
+  "contact": "hello@variantwise.com",
+  "license": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "attribution": "Free to use, share and build on, including commercially, with attribution: credit VariantWise and link to https://variantwise.com."
+  },
+  "attribution": {
+    "creditLine": "Data: VariantWise (variantwise.com), CC BY 4.0",
+    "link": "https://variantwise.com/data",
+    "html": "Data: <a href=\"https://variantwise.com/data\">VariantWise</a>, CC BY 4.0",
+    "markdown": "Data: [VariantWise](https://variantwise.com/data), CC BY 4.0"
+  },
+  "dataAsOf": "2026-08-09",
+  "countryCode": "IN",
+  "counts": {
+    "states": 25,
+    "cities": 95
+  },
+  "notes": [
+    "A state that is missing computes nothing on the site, and is missing here too: an honest gap, not an oversight.",
+    "Confidence and citations travel with each rate. Treat reported-confidence rates as exactly that.",
+    "EV rules decay: exemptions carry validUntil where the state set one.",
+    "A state with its own road tax page on the site carries its url: keep it when you republish, it is the credit."
+  ],
+  "national": {
+    "registrationFeeRs": 600,
+    "smartCardRs": 200,
+    "evRegistrationExempt": true,
+    "tcs": {
+      "thresholdRs": 1000000,
+      "pct": 1,
+      "citation": {
+        "ref": "Income-tax Act 1961 s.206C(1F) from 1 June 2016, and from 1 April 2026 s.394(1) of the Income-tax Act 2025 at the same rate and threshold (renumbering reported, not read from the Act); creditable against the buyer's income tax"
+      }
+    },
+    "fastag": {
+      "fixedRs": 100,
+      "note": "Tag cost only. Issuers add a deposit and minimum balance; dealer bundles commonly total Rs 500-600."
+    },
+    "registrationCitation": {
+      "ref": "CMVR Rule 81, as amended by GSR 1183(E) dated 29-12-2016"
+    },
+    "insurance": {
+      "iceThreeYearByCc": [
+        {
+          "uptoCc": 1000,
+          "premiumRs": 6521
+        },
+        {
+          "uptoCc": 1500,
+          "premiumRs": 10640
+        },
+        {
+          "premiumRs": 24596
+        }
+      ],
+      "evThreeYearByKw": [
+        {
+          "uptoKw": 30,
+          "premiumRs": 5543
+        },
+        {
+          "uptoKw": 65,
+          "premiumRs": 9044
+        },
+        {
+          "premiumRs": 20907
+        }
+      ],
+      "hybridDiscountPct": 7.5,
+      "paAnnualRs": 750,
+      "gstPct": 18,
+      "citation": {
+        "ref": "Motor Vehicles (Third Party Insurance Base Premium and Liability) Rules 2022, G.S.R. 394(E) dated 25-05-2022, as amended by G.S.R. 32(E) dated 05-01-2024; both gazettes read from egazette.gov.in. PA cover per IRDAI circular IRDAI/NL/CIR/MOTP/158/09/2018"
+      },
+      "verifiedOn": "2026-08-07"
+    }
+  },
+  "states": [
+    {
+      "id": "maharashtra",
+      "name": "Maharashtra",
+      "code": "MH",
+      "base": "cost-price",
+      "baseNote": "The Act taxes the 'cost of vehicle'; in practice applied to the ex-showroom price. Exact statutory definition still to be re-read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 11
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 12
+            },
+            {
+              "pct": 13
+            }
+          ],
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Maharashtra Motor Vehicles Tax Act 1958, Second Schedule; dept rate page 1117 (last reviewed 25-03-2026), petrol/diesel base table",
+            "url": "https://transport.maharashtra.gov.in/1117/Rate-of-Vehicle-Tax"
+          },
+          "note": "The department's own rate page shows a 11% top-band typo against the schedule's 13% pattern; the schedule value is used."
+        },
+        {
+          "fuels": [
+            "diesel"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 13
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 14
+            },
+            {
+              "pct": 15
+            }
+          ],
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Maharashtra Motor Vehicles Tax Act 1958, Second Schedule; dept rate page 1117",
+            "url": "https://transport.maharashtra.gov.in/1117/Rate-of-Vehicle-Tax"
+          }
+        },
+        {
+          "fuels": [
+            "cng"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 8
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 9
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Maharashtra Motor Vehicles Tax (Amendment) Act 2025 s.5(1), gazetted 19-03-2025, CNG/LPG rates raised one point to 8/9/10",
+            "url": "https://prsindia.org/files/bills_acts/bills_states/maharashtra/2025/Bill24of2025MH.pdf"
+          }
+        }
+      ],
+      "importedRule": {
+        "slabs": [
+          {
+            "pct": 20
+          }
+        ],
+        "confidence": "official-page",
+        "citation": {
+          "ref": "Maharashtra Transport Department rate of vehicle tax page 1117, motor car rows: the आयातीत (imported) owner category is charged 20% of value in all three price bands, against 11/12/13 for an individual",
+          "url": "https://transport.maharashtra.gov.in/1117/Rate-of-Vehicle-Tax"
+        }
+      },
+      "taxCapRs": 3000000,
+      "surchargesOnTax": [
+        {
+          "name": "Road safety cess (2% of the tax)",
+          "pctOfTax": 2,
+          "confidence": "primary",
+          "citation": {
+            "ref": "Notification MVR-0716/CR-324/TRA-2 dated 17-10-2016, effective 24-10-2016",
+            "url": "https://transport.maharashtra.gov.in/site/upload/pdf/Road%20Safety%20Cess.pdf"
+          }
+        }
+      ],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "validUntil": "2030-03-31",
+        "confidence": "official-page",
+        "citation": {
+          "ref": "Maharashtra EV Policy 2025 (Transport GR dated 23-05-2025, valid to 31-03-2030); exemption confirmed by dept policy links and by the department's own rate of tax page, which lists battery operated vehicles as excluded from tax with no price threshold. GR PDF not retrieved",
+          "url": "https://transport.maharashtra.gov.in/1117/Rate-of-Vehicle-Tax"
+        },
+        "note": "The gazetted 2025 Amendment contains a dormant 6% clause for electric cars above Rs 30 lakh which the state announced it would not implement; the neutralising instrument has not been sighted, so treat expensive EVs here with that risk in mind."
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Figures are for an individual's first personal car; company-registered cars pay 20% in Maharashtra."
+      ],
+      "url": "https://variantwise.com/in/road-tax/maharashtra?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "delhi",
+      "name": "Delhi",
+      "code": "DL",
+      "base": "cost-price",
+      "baseNote": "Schedule I defines 'cost price' in pre-GST terms (manufacturing cost plus duties, no discounts); in practice applied to the ex-showroom price.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid",
+            "electric"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 600000,
+              "pct": 4
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 7
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Delhi Motor Vehicles Taxation Act 1962, Schedule I Part B, read from the department's consolidated Act PDF",
+            "url": "https://transport.delhi.gov.in/sites/default/files/generic_multiple_files/the_delhi_motor_vehicle_taxation_act-r.pdf"
+          }
+        }
+      ],
+      "surchargesOnTax": [
+        {
+          "name": "Diesel surcharge (25% of the tax)",
+          "pctOfTax": 25,
+          "fuels": [
+            "diesel"
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Notification F.NO 19(52)/TPT/SECTT./2010 dated 29-09-2011, read from the scanned notification",
+            "url": "https://transport.delhi.gov.in/sites/default/files/All-PDF/Rates%2Bof%2BTax%2BPropelled%2Bby%2BDiesel.pdf"
+          }
+        }
+      ],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "exemptUptoRs": 3000000,
+        "validUntil": "2030-03-31",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Delhi EV Policy 2026, notified 30-06-2026 (F. No. JC/EV/TPT/2026/02/281), in force 01-07-2026: exemption capped at Rs 30 lakh ex-showroom; gazette PDF not yet sighted"
+        },
+        "note": "Hybrids get no Delhi concession under the 2026 policy."
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Delhi's municipal one-time parking fee (commonly Rs 2,000 to 4,000) is collected in practice but a 2006 High Court ruling held it unlawful and no current authorising notification was found, so it is not in this total."
+      ],
+      "url": "https://variantwise.com/in/road-tax/delhi?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "karnataka",
+      "name": "Karnataka",
+      "code": "KA",
+      "base": "cost-price",
+      "baseNote": "Taxed on the 'cost of the vehicle', in Karnataka practice the invoice cost including GST and cess, which is why Karnataka on-road prices run high.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 13
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 14
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 17
+            },
+            {
+              "pct": 18
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Karnataka MV Taxation Act 1957, Schedule Part A5; read from the department's 2020 schedule compilation AND the Part A5 re-enactment in L.A. Bill 12 of 2026, which agree",
+            "url": "https://prsindia.org/files/bills_acts/bills_states/karnataka/2026/Bill12of2026KA.pdf"
+          }
+        }
+      ],
+      "surchargesOnTax": [
+        {
+          "name": "Cess on the vehicle tax (11%)",
+          "pctOfTax": 11,
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Department cess page: '11% CESS on Vehicle Tax is payable' (infrastructure plus urban transport); statutory sections not re-read"
+          }
+        }
+      ],
+      "flatCharges": [
+        {
+          "name": "Transport workers' welfare cess",
+          "amountRs": 1000,
+          "confidence": "reported",
+          "citation": {
+            "ref": "Karnataka MV Taxation (Second Amendment) Act 2024, published as Act 03 of 2025; act text not sighted, compliance-summary level"
+          }
+        }
+      ],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "uptoRs": 1000000,
+            "pct": 5
+          },
+          {
+            "uptoRs": 2500000,
+            "pct": 8
+          },
+          {
+            "pct": 10
+          }
+        ],
+        "confidence": "primary",
+        "citation": {
+          "ref": "Part A5(a) inserted by Karnataka MV Taxation (Amendment) Act 2026 (L.A. Bill 12 of 2026), in force 10-04-2026 (commencement press-reported)",
+          "url": "https://prsindia.org/files/bills_acts/bills_states/karnataka/2026/Bill12of2026KA.pdf"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/karnataka?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "tamil-nadu",
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "base": "invoice-incl-gst",
+      "baseNote": "The 2023 amendment defines cost as 'the total price paid at the time of purchase'; discounts do not reduce it.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 12
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 13
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 18
+            },
+            {
+              "pct": 20
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "TN MV Taxation Act 1974, Third Schedule Part I as substituted by the Amendment Act 2023 (L.A. Bill 33 of 2023, gazetted 11-10-2023), read from the gazetted text",
+            "url": "https://prsindia.org/files/bills_acts/bills_states/tamil-nadu/2023/Bill33of2023TamilNadu.pdf"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "validUntil": "2027-12-31",
+        "confidence": "reported",
+        "citation": {
+          "ref": "GO of 29-12-2025 extending the battery-vehicle exemption from 01-01-2026 to 31-12-2027; GO itself not retrieved"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/tamil-nadu?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "telangana",
+      "name": "Telangana",
+      "code": "TS",
+      "base": "cost-price",
+      "baseNote": "Cost is statutorily defined and 'shall not be less than the ex-showroom price fixed by the manufacturer' (2022 amendment), with no discount deduction.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 499999,
+              "pct": 13
+            },
+            {
+              "uptoRs": 999999,
+              "pct": 14
+            },
+            {
+              "uptoRs": 1999999,
+              "pct": 18
+            },
+            {
+              "uptoRs": 4999999,
+              "pct": 20
+            },
+            {
+              "pct": 21
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Sixth Schedule as substituted by G.O.Ms.No.53 TR&B dated 13-08-2025, read from the department's own copy. NEWER than most aggregator tables (17% band became 18%, two bands added above Rs 20L)",
+            "url": "https://www.transport.telangana.gov.in/pdf_uploads/2025TRB_MS53.PDF"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "validUntil": "2026-12-31",
+        "lapseAcknowledged": {
+          "checkedOn": "2026-10-08",
+          "recheckBy": "2026-10-22",
+          "finding": "Still no successor published, checked again on 2026-10-08 from a container with no document egress. Searches return G.O.Ms.No.41 of 16-11-2024 ending 31-12-2026 and nothing after it: no extension G.O., no new state EV policy, and no reporting that the ordinary Sixth Schedule rate will resume. The newest piece found, an August 2026 guide, still describes the waiver as due to expire. One thing is worth carrying forward: Odisha extended its own 2026 window by notification three days after it had lapsed (see that state's row), so an extension arriving late is a live possibility here and silence today is not evidence of a lapse. The question for the next run is unchanged: what does Telangana charge an electric car registered on or after 01-01-2027? Encode it the day a TR&B G.O. or policy appears, with its own validUntil where it carries one."
+        },
+        "confidence": "reported",
+        "citation": {
+          "ref": "G.O.Ms.No.41 TR&B dated 16-11-2024: 100% road tax and registration fee exemption for EVs registered up to 31-12-2026; GO PDF not sighted"
+        },
+        "note": "This window closes 31 December 2026; the rule needs re-verification before then."
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Figures are for an individual's first vehicle; a second personal vehicle pays 2 points more and company-owned cars pay the higher Seventh Schedule rates."
+      ],
+      "url": "https://variantwise.com/in/road-tax/telangana?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "west-bengal",
+      "name": "West Bengal",
+      "code": "WB",
+      "base": "notified-value",
+      "baseNote": "Taxed on 'value' (the ex-showroom price as notified); engine size sets a minimum amount, the percentage sets the bill for most real cars.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 10
+            }
+          ],
+          "minByCc": [
+            {
+              "uptoCc": 900,
+              "minRs": 40000
+            },
+            {
+              "uptoCc": 1490,
+              "minRs": 55000
+            },
+            {
+              "uptoCc": 2000,
+              "minRs": 80000
+            },
+            {
+              "minRs": 100000
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "WB Additional Tax and One-time Tax on MV Act 1989, Schedule IV Part 1A, read from the department's consolidated PDF (consolidation labelled 'amended up to 2012'; later-amendment check still owed)",
+            "url": "https://transport.wb.gov.in/wp-content/download/Acts/The%20WBAT&OtTonMVAct(con)2004-2012-final.pdf"
+          },
+          "note": "West Bengal also offers a renewable 5-year tax at 5.5% with lower floors instead of this lifetime figure; quotes elsewhere may silently use either."
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-07 from CarWale's Kolkata breakdowns for 12 electric cars, Rs 6.99L to Rs 1.30Cr. Their RTO line runs Rs 5,000 to Rs 50,000 with no relationship to price (raw 0.38% to 1.96%, fitted slope 0.39% over the six above Rs 21 lakh), so an exemption appears to be in force. West Bengal's exemption has historically run in one-year windows and no current notification was read, so the END DATE is unknown",
+          "url": "https://www.carwale.com/tata-cars/nexon-ev/on-road-price-in-kolkata/"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/west-bengal?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "rajasthan",
+      "name": "Rajasthan",
+      "code": "RJ",
+      "base": "cost-price",
+      "baseNote": "Taxed on the 'cost of the vehicle'; in practice computed on the ex-showroom price.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "ccSlabs": [
+            {
+              "uptoCc": 800,
+              "pct": 6
+            },
+            {
+              "uptoCc": 1200,
+              "pct": 9
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Notification F.6(179)/Pari/Tax/Hqrs/2023-24/2D dated 10-02-2023, read from the notification scan; substitutes the pre-2023 fuel-split table wholesale",
+            "url": "https://transport.rajasthan.gov.in/content/dam/transport/transport-dept/pdf/notification2023/Amendment%20in%20rate%20of%20OTT.pdf"
+          }
+        }
+      ],
+      "surchargesOnTax": [
+        {
+          "name": "Surcharge (12.5% of the tax)",
+          "pctOfTax": 12.5,
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Notification F.6(179)Pari/Tax/Hqrs/2019-20/5 dated 10-07-2019, per the department's surcharge page",
+            "url": "https://transport.rajasthan.gov.in/content/transportportal/en/transport/farefeesandtax/vehicleTax/surcharge.html"
+          }
+        }
+      ],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "validUntil": "2027-08-31",
+        "confidence": "primary",
+        "citation": {
+          "ref": "Rajasthan Gazette Extraordinary, Transport and Road Safety Department notification F.23(22)Pari/P.C./EV/2019/20952 dated 31-08-2022, notifying REVP-2022 effective 1 September 2022 for five years; section 7.1 (page 9) lists exemption from Motor Vehicle Tax and Green Tax under the Rajasthan Motor Vehicle Taxation Act 1951 among the exemptions already implemented for electric vehicles",
+          "url": "https://transport.rajasthan.gov.in/content/transportportal/en/transport/notifications1/REVP2022.html"
+        },
+        "note": "Green Tax is exempt alongside the motor vehicle tax, and this site does not levy Green Tax on a new private car in any state, so the exemption shows as a nil road tax line."
+      },
+      "strongHybridRebatePctOfTax": {
+        "pct": 25,
+        "confidence": "primary",
+        "citation": {
+          "ref": "Notification F.6(179)/Pari/Tax/Hqrs/2023-24/5 dated 10-02-2023: 25% of the one-time tax exempted for strong hybrids (SHEV per FAME Annexure 1), read from the notification scan",
+          "url": "https://transport.rajasthan.gov.in/content/dam/transport/transport-dept/pdf/notification2023/Exemption%20for%20SHEV.pdf"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/rajasthan?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "haryana",
+      "name": "Haryana",
+      "code": "HR",
+      "base": "ex-showroom",
+      "baseNote": "Note (b)(i) of the department's own schedule settles this explicitly: for a new vehicle the cost of the motor vehicle IS the ex-showroom price.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 600000,
+              "pct": 5
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 8
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Haryana Transport Department, NON TRANSPORT VEHICLES (ONE TIME TAX), category I.2 'Vehicle other than two-wheeled vehicle (Cars, Jeep etc.)', vide notification 13/15/2010-6T(I) dated 28-03-2017 with rates effective 01-04-2017. Read from the department's own page via the Internet Archive snapshot of 2024-02-24, the newest copy reachable; the live page could not be opened",
+            "url": "https://web.archive.org/web/20240224030246/https://haryanatransport.gov.in/content/non-transport-vehicles-one-time-tax"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Withdrawn 2026-08-18. Haryana Cabinet decision of 28-07-2026 (following the 2026-27 Budget of 02-03-2026) approves 100 percent motor vehicle tax exemption for new pure electric vehicles up to Rs 30 lakh ex-showroom and 50 percent above, and describes the pre-existing regime as a 20 percent rebate. Both readings contradict the withdrawn 5/8/10 percent row, which was fitted from an aggregator and read from no Haryana electric-vehicle instrument. Press reporting only: no notification sighted, no effective date established, so nothing is encoded in its place",
+          "url": "https://www.autocarindia.com/industry/haryana-waives-road-tax-on-evs-priced-up-to-rs-30-lakh-440328"
+        }
+      },
+      "verifiedOn": "2024-02-24",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/haryana?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "uttar-pradesh",
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "base": "ex-showroom",
+      "baseNote": "The derivation below is against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 400000,
+              "pct": 7
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 9.5
+            },
+            {
+              "pct": 11.5
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-07 from CarWale's published on-road breakdown for Lucknow, 10 cars from Rs 3.70L to Rs 59.65L. Above Rs 10 lakh: 6 observations, raw 11.42% to 11.67%, fitted slope 11.41% with Rs 3,362 fixed. Rs 4L to 10L: two observations, raw 9.69% and 9.92%, 9.27% net of that fixed component. Below Rs 4L: one observation at Rs 3.70L, 7.09% net; the boundary was moved down from Rs 6L after three cheap cars in Lucknow came out 7 to 8 points wide of the pack. NOT read from any Uttar Pradesh notification; the department's site refuses connections from outside India",
+            "url": "https://www.carwale.com/tata-cars/nexon/on-road-price-in-lucknow/"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Withdrawn 2026-09-28. Uttar Pradesh's electric vehicle exemption is reported to have entered its fourth year on 14-10-2025 restricted to vehicles manufactured or assembled inside the state, the waiver running to 13-10-2027 on that condition only; with no large passenger electric car plant in the state, a typical buyer of a car built elsewhere reportedly pays road tax. The withdrawn zero was fitted from an aggregator's Lucknow breakdowns on 2026-08-07, ten months after that boundary, and a per-vehicle origin condition is not something a state-level rate table can express. Press reporting only, converging across four publishers: no notification sighted, no replacement rate established, so nothing is encoded in its place",
+          "url": "https://www.autocarpro.in/news/uttar-pradesh-ends-road-tax-waiver-for-evs-and-hybrids-as-policy-expires-129312"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Uttar Pradesh's rates here are derived from published on-road prices rather than read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/uttar-pradesh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "madhya-pradesh",
+      "name": "Madhya Pradesh",
+      "code": "MP",
+      "base": "ex-showroom",
+      "baseNote": "The derivation below is against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 9
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 10.5
+            },
+            {
+              "uptoRs": 5000000,
+              "pct": 14.75
+            },
+            {
+              "pct": 16.5
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-07 from CarWale's published on-road breakdown for Indore, 10 cars from Rs 3.70L to Rs 59.65L. Up to Rs 10L: 3 observations, raw 8.96% to 9.28%, slope 8.91%. Rs 10L to 20L: 3 observations, raw 10.57% to 10.73%, slope 10.60%. Rs 20L to 50L: 2 observations, slope 14.76%. Above Rs 50L: one observation at 16.41%. NOT read from any Madhya Pradesh notification; mptransport.org has been returning HTTP 503 all day",
+            "url": "https://www.carwale.com/tata-cars/nexon/on-road-price-in-indore/"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "pct": 4.5
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-07 from CarWale's Indore breakdowns for 12 electric cars, Rs 6.99L to Rs 1.30Cr. Ten observations between 4.38% and 4.83% with no step; fitted slope 4.39% with Rs 4,649 fixed over the eight above Rs 17 lakh. NOT read from any Madhya Pradesh instrument",
+          "url": "https://www.carwale.com/tata-cars/nexon-ev/on-road-price-in-indore/"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Madhya Pradesh's rates here are derived from published on-road prices rather than read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/madhya-pradesh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "bihar",
+      "name": "Bihar",
+      "code": "BR",
+      "base": "ex-showroom",
+      "baseNote": "The derivation below is against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1500000,
+              "pct": 10.5
+            },
+            {
+              "pct": 12.5
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-07 from CarWale's published on-road breakdown for Patna, 10 cars from Rs 3.70L to Rs 59.65L. Up to the step: 5 observations, raw 10.57% to 11.04%, slope 10.41% with Rs 2,945 fixed. Above it: 4 observations, raw 12.42% to 12.67%, slope 12.37% with Rs 5,253 fixed. The boundary lies between Rs 14.0L and Rs 18.0L; Rs 15L is interpolated. NOT read from any Bihar notification; the state's transport site resolves on no public resolver",
+            "url": "https://www.carwale.com/tata-cars/nexon/on-road-price-in-patna/"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "uptoRs": 1500000,
+            "pct": 10.5
+          },
+          {
+            "pct": 12.5
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-07 from CarWale's Patna breakdowns for 12 electric cars, Rs 6.99L to Rs 1.30Cr. Fitted slope 10.00% below the step (3 cars) and 12.40% above it (8 cars, raw 12.38% to 13.11%), matching the petrol schedule derived for the same city. NOT read from any Bihar instrument",
+          "url": "https://www.carwale.com/tata-cars/nexon-ev/on-road-price-in-patna/"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Bihar's rates here are derived from published on-road prices rather than read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/bihar?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "gujarat",
+      "name": "Gujarat",
+      "code": "GJ",
+      "base": "ex-showroom",
+      "baseNote": "The department states the rate against the 'cost of vehicle'. Current observed charges are 6% of the EX-SHOWROOM price to within nine rupees on a Rs 6 lakh car, so that is the base this reproduces.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 6
+            }
+          ],
+          "confidence": "official-page",
+          "citation": {
+            "ref": "Gujarat Transport Department Tax Structure page: lump sum tax 6% of the cost of vehicle for Three/Four Wheeler, LMV, Private Car, Station Wagon, jeep. Read from the Internet Archive snapshot of 2014-06-23 because the live site refuses connections from outside India, and corroborated by current on-road prices at the low end (Rs 36,008 charged against 6% of Rs 5,99,990 = Rs 35,999). The same page notes imported vehicles pay twice the rate and non-individual owners more, neither of which is modelled here",
+            "url": "https://web.archive.org/web/20140623231005/http://rtogujarat.gov.in:80/tax.php"
+          }
+        }
+      ],
+      "importedRule": {
+        "slabs": [
+          {
+            "pct": 12
+          }
+        ],
+        "confidence": "official-page",
+        "citation": {
+          "ref": "Gujarat Transport Department Tax Structure page: 'Lump sum tax for Imported Vehicles is twice the rate', applied to the 6% private car rate. Internet Archive snapshot of 2014-06-23, the live site being unreachable from outside India",
+          "url": "https://web.archive.org/web/20140623231005/http://rtogujarat.gov.in:80/tax.php"
+        }
+      },
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Withdrawn 2026-10-03. The withdrawn 1.5% was fitted 2026-08-07 from CarWale's Ahmedabad breakdowns for 12 electric cars, Rs 6.99L to Rs 1.30Cr, eleven observations between 0.98% and 1.59%. Those sit on the 1 percent concessional motor vehicle tax of Gujarat's 2025-26 budget, which is reported to have expired on 31-03-2026, four months before the measurement. Two incompatible successors are reported and neither instrument has been read by any run: that the concession lapsed to the ordinary 6 percent, and that the Green Mobility Policy 2026 reported published on 19-08-2026 waives motor vehicle tax entirely. Press reporting only, disagreeing with itself on what a buyer pays today, so no replacement rate is encoded",
+          "url": "https://www.downtoearth.org.in/energy/india-on-e-wheels-gujarat-green-mobility-policy-targets-evs-ethanol-and-hydrogen-vehicles"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Gujarat charges more again for a car registered to a company; the figures here are for an individual buying their own car."
+      ],
+      "url": "https://variantwise.com/in/road-tax/gujarat?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "punjab",
+      "name": "Punjab",
+      "code": "PB",
+      "base": "ex-showroom",
+      "baseNote": "The derivation below is against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read: the department's site publishes registration and licence fees only, and its own copies are visibly years out of date.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 8.5
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 7.5
+            },
+            {
+              "pct": 8.5
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-07 from CarWale's Amritsar and Jalandhar breakdowns, 8 cars from Rs 3.70L to Rs 59.65L, with the VW Tayron excluded as a cross-state default. Fitted slopes 8.11% up to Rs 10L (3 cars, worst residual Rs 464), 7.54% from Rs 10L to Rs 20L (3 cars, worst Rs 3,260) and 8.09% above (2 cars). Ludhiana runs higher below Rs 14 lakh, possibly a local charge, and is not what these rates are fitted to. NOT read from any Punjab notification",
+            "url": "https://www.carwale.com/tata-cars/nexon/on-road-price-in-amritsar/"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-07 from CarWale's Amritsar breakdowns for 12 electric cars, Rs 6.99L to Rs 1.30Cr. Their RTO line runs Rs 5,000 to Rs 50,000, fitted slope 0.40% with Rs 3,273 fixed, so Punjab appears to levy no road tax on electric cars. NOT read from any Punjab instrument",
+          "url": "https://www.carwale.com/tata-cars/nexon-ev/on-road-price-in-amritsar/"
+        }
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [
+        "Punjab's rates here are derived from published on-road prices rather than read from the state's own schedule, and Ludhiana appears to add a local charge below Rs 14 lakh that these figures do not include."
+      ],
+      "url": "https://variantwise.com/in/road-tax/punjab?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "kerala",
+      "name": "Kerala",
+      "code": "KL",
+      "base": "invoice-incl-gst",
+      "baseNote": "The Act's 'purchase value' includes GST and cess, forbids deducting dealer discounts, and floors at the manufacturer's Parivahan-notified amount.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 10
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 13
+            },
+            {
+              "uptoRs": 1500000,
+              "pct": 15
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 17
+            },
+            {
+              "pct": 22
+            }
+          ],
+          "confidence": "primary",
+          "citation": {
+            "ref": "Kerala MV Taxation Act 1976, Annexure I item A, as amended by the Kerala Finance Act 2023 (w.e.f. 01-04-2023), read from the MVD's consolidated Act. NEWER than most aggregator tables (pre-2023 9/11/13/16/21 still circulates)",
+            "url": "https://mvd.kerala.gov.in/sites/default/files/Downloads/Taxation%20act%20updated%20upto%202023_0.pdf"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [
+        {
+          "name": "Road safety cess",
+          "amountRs": 200,
+          "confidence": "reported",
+          "citation": {
+            "ref": "Kerala Road Safety Authority Act 2007 cess, doubled to Rs 200 for light motor vehicles from 01-04-2023; amounts press-reported, notification not sighted"
+          }
+        }
+      ],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "uptoRs": 1500000,
+            "pct": 5
+          },
+          {
+            "uptoRs": 2000000,
+            "pct": 8
+          },
+          {
+            "pct": 10
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "5% base rate read from the Act itself (Finance Act 2020, item 7B); the 8% and 10% bands above Rs 15 lakh are the 2025-26 budget change, press-reported pending the Finance Act 2025 text"
+        },
+        "note": "Battery-rental EVs (battery leased separately) pay 10% regardless of value; not modelled. Kerala is also reported to have revised its electric rates in the 2026 Finance Act, which we have not been able to read yet, so this tax line is the last figure we could verify rather than today's. Confirm it with your dealer, especially above Rs 40 lakh, where the reported change is upward."
+      },
+      "verifiedOn": "2026-08-07",
+      "caveats": [],
+      "url": "https://variantwise.com/in/road-tax/kerala?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "andhra-pradesh",
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 13
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 14
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 17
+            },
+            {
+              "pct": 18
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Visakhapatnam, 57 variants Rs 3.70L to Rs 48.69L, exactly 13.00% (6 cars, to Rs 5.00L), 14.00% (4 cars, Rs 5.32L to 7.80L), 17.00% (24 cars, Rs 11.00L to 19.91L), 18.00% (23 cars, Rs 20.22L to 48.69L), no fixed component in any band. CarWale Vijayawada corroborates 13.00%, 17.00% and a fitted 18.38%, but reads 15.40% in the second band against 14.00% here. Boundaries at Rs 5L, Rs 10L and Rs 20L are interpolated inside observation gaps. Corroborated on 2026-08-09 by Telangana's primary schedule, which derives from the same Andhra Pradesh Motor Vehicles Taxation Act 1963 and carries identical 13% and 14% bands at the same boundaries; that also resolves the aggregator disagreement in favour of 14%. The state's own Sixth Schedule is readable at aptransport.org but reads 12%/14% as substituted by Act 11 of 2010, which is superseded. NOT read from any current Andhra Pradesh notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-visakhapatnam"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Visakhapatnam breakdowns, 26 electric cars Rs 4.69L to Rs 1.30Cr. Fitted slope 0.00% with a Rs 3,000 fixed component and zero residual across all 26, which is an exemption plus a flat charge rather than a rate. NOT read from any Andhra Pradesh instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-visakhapatnam"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Andhra Pradesh's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/andhra-pradesh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "arunachal-pradesh",
+      "name": "Arunachal Pradesh",
+      "code": "AR",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 2.5
+            },
+            {
+              "uptoRs": 1500000,
+              "pct": 3
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 4
+            },
+            {
+              "pct": 6
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Itanagar, exactly 2.50% (6 cars to Rs 5.00L), 3.00% (Rs 5.32L to 7.80L), 4.00% (Rs 15.50L to 19.91L), 6.00% (23 cars Rs 20.22L to 48.69L), no fixed component. CarWale Itanagar fits 2.95%, 3.44% (8 cars), 4.00% (4 cars) and 5.38% (5 cars). The 3 to 4 percent boundary was placed at Rs 15L by refetching that range with four different models. NOT read from any Arunachal Pradesh notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-itanagar"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Itanagar breakdowns across every electric model in the catalogue: 24 observations from Rs 4.99L to Rs 1.30Cr, every one carrying an identical flat charge, so the levy is not ad valorem. CarWale's Itanagar figures agree on the shape, fitting a 0.39% slope on a Rs 4,163 intercept over nine cars, but disagree on the amount, so no charge is added. Controlled against five states whose electric rules are already on file, which returned their own distinct values rather than this one. NOT read from any Arunachal Pradesh instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-itanagar"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Arunachal Pradesh's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/arunachal-pradesh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "assam",
+      "name": "Assam",
+      "code": "AS",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 6
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 10
+            },
+            {
+              "pct": 14
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Guwahati, 57 variants Rs 3.70L to Rs 48.69L: exactly 6.00% (6 cars to Rs 5.00L), 10.00% (28 cars Rs 5.32L to 19.91L), 14.00% (23 cars Rs 20.22L to 48.69L), no fixed component in any band. CarWale Guwahati fits 6.95%, 10.35% (12 cars) and 14.38% (5 cars) with a small positive intercept, consistent with the same rates plus registration and plates. Boundaries at Rs 5L and Rs 20L. NOT read from any Assam notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-guwahati"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "uptoRs": 500000,
+            "pct": 6
+          },
+          {
+            "uptoRs": 2000000,
+            "pct": 10
+          },
+          {
+            "pct": 14
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Guwahati breakdowns, 26 electric cars Rs 4.69L to Rs 1.30Cr: exactly 6.00% below Rs 5L, 10.00% from Rs 6.99L to Rs 19.49L (7 cars), 14.00% from Rs 21.90L to Rs 1.30Cr (18 cars), matching the petrol schedule band for band. The same sweep returned a 0.00% slope in five other states and a partial rebate in two more, so the source does distinguish electric rules. NOT read from any Assam instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-guwahati"
+        },
+        "note": "You will see Assam's 2021 electric vehicle policy quoted as waiving road tax. Its five year term is reported to have ended on 4 September 2026 with nothing announced to replace it, and the Guwahati prices we checked in August already charged the full rate, so that is what this figure shows."
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Assam's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/assam?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "chhattisgarh",
+      "name": "Chhattisgarh",
+      "code": "CG",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Raipur, 57 variants Rs 3.70L to Rs 48.69L, every one at exactly 10.00% of ex-showroom with no fixed component and no band boundary. CarWale Raipur fits 10.44% over 18 cars across the same range. NOT read from any Chhattisgarh notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-raipur"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "pct": 5
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Raipur breakdowns, 26 electric cars Rs 4.69L to Rs 1.30Cr, every one at exactly 5.00% of ex-showroom with no fixed component: half the 10.00% petrol rate derived for the same city. NOT read from any Chhattisgarh instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-raipur"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Chhattisgarh's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/chhattisgarh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "goa",
+      "name": "Goa",
+      "code": "GA",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1000000,
+              "pct": 9
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 12
+            },
+            {
+              "pct": 15
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Panaji, 57 variants: exactly 9.00% (10 cars to Rs 7.80L), 12.00% (24 cars Rs 11.00L to 19.91L), 15.00% (23 cars Rs 20.22L to 47.48L), no fixed component. CarWale Panaji fits 9.68% (5 cars), 12.00% (3 cars), 12.83% (5 cars), 16.20% (3 cars) and 15.00% (2 cars); its top bands carry large intercepts and are the softer part. Boundaries at Rs 10L and Rs 20L are interpolated inside gaps. NOT read from any Goa notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-panaji"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Neither source returned enough electric observations for Goa to establish a rate. Deliberately left unverified so the honesty gate refuses to price electric cars here rather than borrowing the petrol rate, which would be a guess about a concession"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Goa's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/goa?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "jharkhand",
+      "name": "Jharkhand",
+      "code": "JH",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 700000,
+              "pct": 7
+            },
+            {
+              "pct": 9
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Ranchi, 57 variants: exactly 7.00% (9 cars to Rs 6.98L) and 9.00% (48 cars Rs 7.80L to Rs 48.69L), no fixed component. CarWale Ranchi fits 7.31% (3 cars) and 9.44% (11 cars). The Jharkhand Motor Vehicles Taxation Act 2001, read from an Internet Archive snapshot of the state's own PDF, gives Schedule I Part A as 'Rs. 9000/- or 3% of the Cost of the vehicle whichever is more', which cannot be current against either measurement and is treated as superseded. NOT read from any current Jharkhand notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-ranchi"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "slabs",
+        "slabs": [
+          {
+            "uptoRs": 700000,
+            "pct": 5
+          },
+          {
+            "pct": 7
+          }
+        ],
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Ranchi breakdowns, 26 electric cars Rs 4.69L to Rs 1.30Cr: exactly 5.00% (2 cars to Rs 6.99L) and 7.00% (24 cars Rs 8.49L to Rs 1.30Cr), two points below the petrol schedule at the same boundary. NOT read from any Jharkhand instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-ranchi"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Jharkhand's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/jharkhand?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "meghalaya",
+      "name": "Meghalaya",
+      "code": "ML",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 1500000,
+              "pct": 6
+            },
+            {
+              "uptoRs": 2000000,
+              "pct": 8
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Shillong: exactly 6.00% to about Rs 15L, 8.00% from Rs 15.50L to Rs 19.91L, 10.00% (23 cars) Rs 20.22L to Rs 48.69L. CarWale Shillong fits 6.47% (9 cars to Rs 14.51L), 8.00% (4 cars Rs 17.99L to 19.72L) and 10.38% (5 cars Rs 23.33L to 59.65L), agreeing on both boundaries. Two models in this city serve a 10.00% fallback and were excluded after refetching the range with four others. NOT read from any Meghalaya notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-shillong"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Shillong breakdowns across every electric model in the catalogue: 90 observations from Rs 4.99L to Rs 1.30Cr, every one carrying an identical flat charge, so the levy is not ad valorem. CarWale's Shillong figures agree on the shape, fitting a 0.39% slope on a Rs 4,163 intercept over nine cars, but disagree on the amount, so no charge is added. Controlled against five states whose electric rules are already on file, which returned their own distinct values rather than this one. NOT read from any Meghalaya instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-shillong"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Meghalaya's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/meghalaya?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "mizoram",
+      "name": "Mizoram",
+      "code": "MZ",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 6
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Aizawl, every observation at exactly 6.00% of ex-showroom with no band boundary and no fixed component, verified by refetching Rs 8L to Rs 26L with four separate models after one returned a flat 10.00% fallback. CarWale Aizawl fits 6.45% across 18 cars, but serves that city's figures identically to another state's, so it corroborates the level only. NOT read from any Mizoram notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-aizawl"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Aizawl breakdowns across every electric model in the catalogue: 64 observations from Rs 4.99L to Rs 1.30Cr, every one carrying an identical flat charge, so the levy is not ad valorem. CarWale's Aizawl figures agree on the shape, fitting a 0.39% slope on a Rs 4,163 intercept over nine cars, but disagree on the amount, so no charge is added. Controlled against five states whose electric rules are already on file, which returned their own distinct values rather than this one. NOT read from any Mizoram instrument",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-aizawl"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Mizoram's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/mizoram?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "odisha",
+      "name": "Odisha",
+      "code": "OD",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "uptoRs": 500000,
+              "pct": 6
+            },
+            {
+              "uptoRs": 1000000,
+              "pct": 8
+            },
+            {
+              "pct": 10
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Bhubaneswar, 57 variants: exactly 6.00% (5 cars to Rs 4.95L), 8.00% (5 cars Rs 5.00L to 7.80L), 10.00% (47 cars Rs 11.00L to 48.69L), no fixed component. CarWale Bhubaneswar fits 6.61%, 8.00% (4 cars) and 10.53% (13 cars) at the same boundaries. NOT read from any Odisha notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-bhubaneswar"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "exempt",
+        "validUntil": "2026-12-31",
+        "lapseAcknowledged": {
+          "checkedOn": "2026-10-08",
+          "recheckBy": "2026-10-22",
+          "finding": "The window itself is what was found today, and it was not on this row before. Four publishers report the Commerce and Transport Department extending the EV Policy 2021 under its para 11.5, from 30-09-2026 to 31-12-2026, keeping the 100 percent road tax and registration exemption. Nothing says what an electric car registered on or after 01-01-2027 pays, and the notification has not been read. This state extends in short steps, so the next run should expect another extension rather than a lapse, and must still encode only what it can cite."
+        },
+        "confidence": "reported",
+        "citation": {
+          "ref": "Derived 2026-08-09 from CarDekho's Bhubaneswar breakdowns, 26 electric cars Rs 4.69L to Rs 1.30Cr. Fitted slope 0.00% with a Rs 2,000 fixed component and zero residual across all 26, which is an exemption plus a flat charge rather than a rate. The exemption is an incentive of the Odisha EV Policy 2021, reported extended on 03-10-2026 to 31-12-2026 under its para 11.5; neither that notification nor any Odisha instrument has been read",
+          "url": "https://www.cardekho.com/tata/nexon-ev/price-in-bhubaneswar"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Odisha's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/odisha?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "jammu-and-kashmir",
+      "name": "Jammu and Kashmir",
+      "code": "JK",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 9
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Srinagar, 57 variants Rs 3.70L to Rs 48.69L, every one at exactly 9.00% with no band boundary and no fixed component. CarWale Srinagar fits 9.45% across 18 cars. Both sources return the same figures for Ladakh, so that agreement is about the two territories sharing a schedule rather than two independent measurements. NOT read from any Jammu and Kashmir notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-srinagar"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Neither source returned enough electric observations for Jammu and Kashmir to establish a rate. Deliberately left unverified so the honesty gate refuses to price electric cars here rather than borrowing the petrol rate, which would be a guess about a concession"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Jammu and Kashmir's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/jammu-and-kashmir?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    },
+    {
+      "id": "ladakh",
+      "name": "Ladakh",
+      "code": "LA",
+      "base": "ex-showroom",
+      "baseNote": "Both derivations are against the ex-showroom price, so that is the base this reproduces. The statutory base has not been read.",
+      "kind": "one-time",
+      "rules": [
+        {
+          "fuels": [
+            "petrol",
+            "diesel",
+            "cng",
+            "hybrid",
+            "plug-in-hybrid"
+          ],
+          "slabs": [
+            {
+              "pct": 9
+            }
+          ],
+          "confidence": "reported",
+          "citation": {
+            "ref": "Derived 2026-08-09 from two independent sources. CarDekho Leh, 57 variants Rs 3.70L to Rs 48.69L, every one at exactly 9.00% with no band boundary and no fixed component. CarWale Leh fits 9.45% across 18 cars. Both sources return figures for Leh identical to Srinagar's, consistent with Ladakh having inherited Jammu and Kashmir's schedule on reorganisation in 2019. NOT read from any Ladakh notification",
+            "url": "https://www.cardekho.com/toyota/innova-crysta/price-in-leh"
+          }
+        }
+      ],
+      "surchargesOnTax": [],
+      "flatCharges": [],
+      "ev": {
+        "treatment": "unverified",
+        "confidence": "unverified",
+        "citation": {
+          "ref": "Neither source returned enough electric observations for Ladakh to establish a rate. Deliberately left unverified so the honesty gate refuses to price electric cars here rather than borrowing the petrol rate, which would be a guess about a concession"
+        }
+      },
+      "verifiedOn": "2026-08-09",
+      "caveats": [
+        "Ladakh's rates here are derived from two published price sources that agree, not read from the state's own schedule, so treat them as indicative and confirm with your dealer."
+      ],
+      "url": "https://variantwise.com/in/road-tax/ladakh?utm_source=open-data&utm_medium=dataset&utm_campaign=road-tax"
+    }
+  ],
+  "cities": [
+    {
+      "id": "mumbai",
+      "name": "Mumbai",
+      "stateId": "maharashtra",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "MH-01",
+            "office": "Regional Transport Office, Mumbai (Central), Tardeo",
+            "jurisdiction": "South Mumbai island city: Fort, Colaba, Marine Lines, Malabar Hill, Girgaon, Byculla, Mazgaon, Parel, Worli, Dadar, Mahim, Sion, Wadala and Antop Hill"
+          },
+          {
+            "code": "MH-02",
+            "office": "Regional Transport Office, Mumbai (West), Andheri",
+            "jurisdiction": "Western suburbs from Bandra to Jogeshwari: Bandra, Khar, Santacruz, Vile Parle, Juhu, Andheri and the airport area"
+          },
+          {
+            "code": "MH-03",
+            "office": "Regional Transport Office, Mumbai (East), Wadala",
+            "jurisdiction": "Eastern suburbs: Kurla, Chembur, Ghatkopar, Vikhroli, Powai, Bhandup, Mulund, Govandi, Mankhurd and Trombay"
+          },
+          {
+            "code": "MH-47",
+            "office": "Deputy Regional Transport Office, Borivali",
+            "jurisdiction": "Northern western suburbs: Goregaon, Malad, Kandivali, Borivali and Dahisar"
+          }
+        ],
+        "citation": {
+          "ref": "Motor Vehicle Department, Maharashtra, Know Your RTO area-to-office mapping; codes also on the department's Regional Offices page",
+          "url": "https://transport.maharashtra.gov.in/site/upload/pdf/Know%20Your%20RTO.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "pune",
+      "name": "Pune",
+      "stateId": "maharashtra",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "MH-12",
+            "office": "Regional Transport Office, Pune",
+            "jurisdiction": "Pune Municipal Corporation area, plus Haveli, Mulshi, Shirur, Velha, Purandar, Bhor and Indapur talukas"
+          },
+          {
+            "code": "MH-14",
+            "office": "Deputy Regional Transport Office, Pimpri-Chinchwad",
+            "jurisdiction": "Pimpri Chinchwad Municipal Corporation and its taluka, plus Junnar, Khed, Ambegaon and Maval talukas"
+          }
+        ],
+        "citation": {
+          "ref": "Motor Vehicle Department, Maharashtra, Know Your RTO area-to-office mapping; codes also on the department's Regional Offices page",
+          "url": "https://transport.maharashtra.gov.in/site/upload/pdf/Know%20Your%20RTO.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "nagpur",
+      "name": "Nagpur",
+      "stateId": "maharashtra",
+      "tier": 1
+    },
+    {
+      "id": "thane",
+      "name": "Thane",
+      "stateId": "maharashtra",
+      "tier": 2
+    },
+    {
+      "id": "nashik",
+      "name": "Nashik",
+      "stateId": "maharashtra",
+      "tier": 2,
+      "aka": [
+        "Nasik"
+      ]
+    },
+    {
+      "id": "navi-mumbai",
+      "name": "Navi Mumbai",
+      "stateId": "maharashtra",
+      "tier": 2
+    },
+    {
+      "id": "aurangabad",
+      "name": "Aurangabad",
+      "stateId": "maharashtra",
+      "tier": 2,
+      "aka": [
+        "Chhatrapati Sambhajinagar",
+        "Sambhajinagar"
+      ]
+    },
+    {
+      "id": "kolhapur",
+      "name": "Kolhapur",
+      "stateId": "maharashtra",
+      "tier": 2
+    },
+    {
+      "id": "delhi",
+      "name": "Delhi",
+      "stateId": "delhi",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "DL-01",
+            "office": "Transport Department zonal office, North District, Mall Road",
+            "jurisdiction": "Civil Lines, Kashmere Gate, Chandni Chowk and other North Delhi areas"
+          },
+          {
+            "code": "DL-02",
+            "office": "Transport Department zonal office, New Delhi District, IP Estate",
+            "jurisdiction": "Connaught Place, Parliament Street, Chanakya Puri and other New Delhi areas"
+          },
+          {
+            "code": "DL-03",
+            "office": "Transport Department zonal office, South District, Sheikh Sarai",
+            "jurisdiction": "Hauz Khas, Saket, Lajpat Nagar, Greater Kailash and other South Delhi areas"
+          },
+          {
+            "code": "DL-04",
+            "office": "Transport Department zonal office, West District I, Janakpuri",
+            "jurisdiction": "Janakpuri, Tilak Nagar, Uttam Nagar, Paschim Vihar and nearby West Delhi areas"
+          },
+          {
+            "code": "DL-05",
+            "office": "Transport Department zonal office, North East District, Shahdara",
+            "jurisdiction": "Shahdara, Seelampur, Yamuna Vihar and other North East Delhi areas"
+          },
+          {
+            "code": "DL-06",
+            "office": "Transport Department zonal office, Central District, Sarai Kale Khan",
+            "jurisdiction": "Daryaganj, Karol Bagh, Paharganj and other Central Delhi areas"
+          },
+          {
+            "code": "DL-07",
+            "office": "Transport Department zonal office, East District I, Mayur Vihar",
+            "jurisdiction": "Laxmi Nagar, Preet Vihar, Patparganj and Mayur Vihar"
+          },
+          {
+            "code": "DL-08",
+            "office": "Transport Department zonal office, North West District I, Wazirpur",
+            "jurisdiction": "Model Town, Ashok Vihar, Shalimar Bagh and Pitampura"
+          },
+          {
+            "code": "DL-09",
+            "office": "Transport Department zonal office, South West District I, Dwarka"
+          },
+          {
+            "code": "DL-10",
+            "office": "Transport Department zonal office, West District II, Raja Garden"
+          },
+          {
+            "code": "DL-11",
+            "office": "Transport Department zonal office, North West District II, Rohini"
+          },
+          {
+            "code": "DL-12",
+            "office": "Transport Department zonal office, South West District II, Vasant Vihar"
+          },
+          {
+            "code": "DL-13",
+            "office": "Transport Department zonal office, East District II, Surajmal Vihar"
+          },
+          {
+            "code": "DL-14",
+            "office": "Transport Department zonal office, East District II, Surajmal Vihar"
+          }
+        ],
+        "citation": {
+          "ref": "Transport Department, Government of NCT of Delhi, Location of Zonal Offices list (district, office, jurisdiction and registration series per zone)",
+          "url": "https://transport.delhi.gov.in/sites/default/files/Transport/generic_multiple_files/new_zonal_office_informations_0.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "bengaluru",
+      "name": "Bengaluru",
+      "stateId": "karnataka",
+      "tier": 1,
+      "aka": [
+        "Bangalore"
+      ],
+      "registration": {
+        "series": [
+          {
+            "code": "KA-01",
+            "office": "Regional Transport Office, Bengaluru Central",
+            "jurisdiction": "central Bengaluru; office at HSR Layout"
+          },
+          {
+            "code": "KA-02",
+            "office": "Regional Transport Office, Bengaluru West",
+            "jurisdiction": "western Bengaluru; office at Rajajinagar"
+          },
+          {
+            "code": "KA-03",
+            "office": "Regional Transport Office, Bengaluru East",
+            "jurisdiction": "eastern Bengaluru; office at Kasturi Nagar"
+          },
+          {
+            "code": "KA-04",
+            "office": "Regional Transport Office, Bengaluru North",
+            "jurisdiction": "northern Bengaluru; office at Yeshwanthpur"
+          },
+          {
+            "code": "KA-05",
+            "office": "Regional Transport Office, Bengaluru South",
+            "jurisdiction": "southern Bengaluru; office at Jayanagar"
+          },
+          {
+            "code": "KA-41",
+            "office": "Regional Transport Office, Railway Men Layout, Malathalli",
+            "jurisdiction": "outer west Bengaluru; office at Malathalli near Upkar Layout"
+          },
+          {
+            "code": "KA-43",
+            "office": "Regional Transport Office, Devanahalli",
+            "jurisdiction": "Devanahalli, in the department's Bengaluru Urban division"
+          },
+          {
+            "code": "KA-50",
+            "office": "Regional Transport Office, Yelahanka",
+            "jurisdiction": "office at Singanayakanahalli Village, Yelahanka Hobli, Bengaluru North"
+          },
+          {
+            "code": "KA-51",
+            "office": "Regional Transport Office, Electronic City",
+            "jurisdiction": "Electronic City"
+          },
+          {
+            "code": "KA-53",
+            "office": "Regional Transport Office, K.R. Puram",
+            "jurisdiction": "K.R. Puram; office at Bhattarahalli, Old Madras Road"
+          },
+          {
+            "code": "KA-59",
+            "office": "Regional Transport Office, Chandapura",
+            "jurisdiction": "Chandapura"
+          }
+        ],
+        "citation": {
+          "ref": "Karnataka Transport Department, Regional and Assistant Regional Transport Officers directory, Bengaluru Urban Division section; the live site refused connections, so verified from the Wayback Machine snapshot of that official page dated 2024-02-05, cross-checked against the 2021-06-19 snapshot",
+          "url": "https://transport.karnataka.gov.in/index.php/page/Contact+Us/Regional+and+Assistant+Regional+Transport+officers/en"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "mysuru",
+      "name": "Mysuru",
+      "stateId": "karnataka",
+      "tier": 2,
+      "aka": [
+        "Mysore"
+      ]
+    },
+    {
+      "id": "mangaluru",
+      "name": "Mangaluru",
+      "stateId": "karnataka",
+      "tier": 2,
+      "aka": [
+        "Mangalore"
+      ]
+    },
+    {
+      "id": "hubballi",
+      "name": "Hubballi",
+      "stateId": "karnataka",
+      "tier": 2,
+      "aka": [
+        "Hubli",
+        "Hubli-Dharwad"
+      ]
+    },
+    {
+      "id": "belagavi",
+      "name": "Belagavi",
+      "stateId": "karnataka",
+      "tier": 2,
+      "aka": [
+        "Belgaum"
+      ]
+    },
+    {
+      "id": "chennai",
+      "name": "Chennai",
+      "stateId": "tamil-nadu",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "TN-01",
+            "office": "RTO, Chennai Central",
+            "jurisdiction": "central Chennai; office at Ayanavaram"
+          },
+          {
+            "code": "TN-02",
+            "office": "RTO, Chennai North West",
+            "jurisdiction": "north west Chennai; office at Anna Nagar"
+          },
+          {
+            "code": "TN-03",
+            "office": "RTO, Chennai North East",
+            "jurisdiction": "north east Chennai; office at Tondiarpet"
+          },
+          {
+            "code": "TN-04",
+            "office": "RTO, Chennai East",
+            "jurisdiction": "east Chennai; office at Pulianthoppu"
+          },
+          {
+            "code": "TN-05",
+            "office": "RTO, Chennai North",
+            "jurisdiction": "north Chennai; office at Kolathur"
+          },
+          {
+            "code": "TN-06",
+            "office": "RTO, Chennai South East",
+            "jurisdiction": "south east Chennai; office at Mandaveli"
+          },
+          {
+            "code": "TN-07",
+            "office": "RTO, Chennai South",
+            "jurisdiction": "south Chennai; office at Thiruvanmiyur"
+          },
+          {
+            "code": "TN-09",
+            "office": "RTO, Chennai West",
+            "jurisdiction": "west Chennai; office at K.K. Nagar"
+          },
+          {
+            "code": "TN-10",
+            "office": "RTO, Chennai South West",
+            "jurisdiction": "south west Chennai; office at Virugambakkam"
+          },
+          {
+            "code": "TN-13",
+            "office": "RTO, Ambattur",
+            "jurisdiction": "Ambattur"
+          },
+          {
+            "code": "TN-14",
+            "office": "RTO, Sholinganallur",
+            "jurisdiction": "Sholinganallur"
+          },
+          {
+            "code": "TN-18",
+            "office": "RTO, Redhills",
+            "jurisdiction": "Redhills"
+          },
+          {
+            "code": "TN-22",
+            "office": "RTO, Alandur",
+            "jurisdiction": "Alandur; office at Meenambakkam"
+          }
+        ],
+        "citation": {
+          "ref": "Tamil Nadu State Transport Authority, Regional Transport Office contact list; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2021-08-14",
+          "url": "https://tnsta.gov.in/contactus_rtooffice1.jsp"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "coimbatore",
+      "name": "Coimbatore",
+      "stateId": "tamil-nadu",
+      "tier": 2
+    },
+    {
+      "id": "madurai",
+      "name": "Madurai",
+      "stateId": "tamil-nadu",
+      "tier": 2
+    },
+    {
+      "id": "tiruchirappalli",
+      "name": "Tiruchirappalli",
+      "stateId": "tamil-nadu",
+      "tier": 2,
+      "aka": [
+        "Trichy",
+        "Trichinopoly"
+      ]
+    },
+    {
+      "id": "salem",
+      "name": "Salem",
+      "stateId": "tamil-nadu",
+      "tier": 2
+    },
+    {
+      "id": "hyderabad",
+      "name": "Hyderabad",
+      "stateId": "telangana",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "TG-09",
+            "office": "RTA Hyderabad Central Zone, Khairatabad",
+            "jurisdiction": "central Hyderabad zone"
+          },
+          {
+            "code": "TG-10",
+            "office": "RTA Hyderabad North Zone, Secunderabad",
+            "jurisdiction": "north Hyderabad zone"
+          },
+          {
+            "code": "TG-11",
+            "office": "RTA Hyderabad East Zone, Malakpet",
+            "jurisdiction": "east Hyderabad zone"
+          },
+          {
+            "code": "TG-12",
+            "office": "RTA Hyderabad South Zone, Bandlaguda",
+            "jurisdiction": "south Hyderabad zone"
+          },
+          {
+            "code": "TG-13",
+            "office": "RTA Hyderabad West Zone, Tolichowki",
+            "jurisdiction": "west Hyderabad zone"
+          },
+          {
+            "code": "TG-14",
+            "office": "Hyderabad registering authority, additional code allotted in the gazette"
+          }
+        ],
+        "citation": {
+          "ref": "Telangana Gazette No. 157, G.O.Ms.No.11 TR&B (Tr.I) dated 14-03-2024, assigning registering authority codes after the TG series replaced TS; zone-to-code mapping from the department's zone-wise number reservation lists and district offices directory",
+          "url": "https://www.transport.telangana.gov.in/html/registration-districtcodes.html"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "warangal",
+      "name": "Warangal",
+      "stateId": "telangana",
+      "tier": 2
+    },
+    {
+      "id": "nizamabad",
+      "name": "Nizamabad",
+      "stateId": "telangana",
+      "tier": 2
+    },
+    {
+      "id": "kolkata",
+      "name": "Kolkata",
+      "stateId": "west-bengal",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "WB-02",
+            "office": "Public Vehicles Department, Kolkata",
+            "jurisdiction": "Kolkata; non-transport vehicles other than two-wheelers, which covers private cars"
+          },
+          {
+            "code": "WB-06",
+            "office": "Public Vehicles Department, Kolkata",
+            "jurisdiction": "second series for the same class at the same authority"
+          }
+        ],
+        "citation": {
+          "ref": "West Bengal Transport Department, Registration of Vehicle page, Registration Marks and Series table; the live site timed out, so verified from the Wayback Machine snapshot of that official page dated 2019-06-20",
+          "url": "https://transport.wb.gov.in/governance-services/vehicle-registration/"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "howrah",
+      "name": "Howrah",
+      "stateId": "west-bengal",
+      "tier": 2
+    },
+    {
+      "id": "durgapur",
+      "name": "Durgapur",
+      "stateId": "west-bengal",
+      "tier": 2
+    },
+    {
+      "id": "siliguri",
+      "name": "Siliguri",
+      "stateId": "west-bengal",
+      "tier": 2
+    },
+    {
+      "id": "jaipur",
+      "name": "Jaipur",
+      "stateId": "rajasthan",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "RJ-14",
+            "office": "Regional Transport Office, Jaipur",
+            "jurisdiction": "Jaipur transport district, the main citywide code"
+          },
+          {
+            "code": "RJ-45",
+            "office": "District Transport Office, Jaipur North, Vidhyadhar Nagar",
+            "jurisdiction": "north zone of Jaipur"
+          }
+        ],
+        "citation": {
+          "ref": "Rajasthan Transport Department, districtwise vehicle registration code table (Table 1.7), office names cross checked on the department's TC Office directory",
+          "url": "https://transport.rajasthan.gov.in/content/dam/transport/transport-dept/pdf/statistical2015-16/1.7.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "jodhpur",
+      "name": "Jodhpur",
+      "stateId": "rajasthan",
+      "tier": 2
+    },
+    {
+      "id": "udaipur",
+      "name": "Udaipur",
+      "stateId": "rajasthan",
+      "tier": 2
+    },
+    {
+      "id": "kota",
+      "name": "Kota",
+      "stateId": "rajasthan",
+      "tier": 2
+    },
+    {
+      "id": "ajmer",
+      "name": "Ajmer",
+      "stateId": "rajasthan",
+      "tier": 2
+    },
+    {
+      "id": "gurugram",
+      "name": "Gurugram",
+      "stateId": "haryana",
+      "tier": 1,
+      "aka": [
+        "Gurgaon"
+      ],
+      "registration": {
+        "series": [
+          {
+            "code": "HR-26",
+            "office": "SDO (Civil), Gurugram North",
+            "jurisdiction": "Gurugram North subdivision"
+          },
+          {
+            "code": "HR-72",
+            "office": "SDO (Civil), Gurugram South",
+            "jurisdiction": "Gurugram South subdivision"
+          }
+        ],
+        "citation": {
+          "ref": "Haryana Transport Department, Where to Apply page, Registering Authority in Haryana table; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2026-06-11",
+          "url": "https://haryanatransport.gov.in/en/content/where-apply-1"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "faridabad",
+      "name": "Faridabad",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "panipat",
+      "name": "Panipat",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "ambala",
+      "name": "Ambala",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "karnal",
+      "name": "Karnal",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "hisar",
+      "name": "Hisar",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "rohtak",
+      "name": "Rohtak",
+      "stateId": "haryana",
+      "tier": 2
+    },
+    {
+      "id": "lucknow",
+      "name": "Lucknow",
+      "stateId": "uttar-pradesh",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "UP-32",
+            "office": "Regional Transport Office, Lucknow",
+            "jurisdiction": "Lucknow district, with a separate Trans Gomti office under the same code"
+          }
+        ],
+        "citation": {
+          "ref": "Uttar Pradesh Transport Department, RTO code list; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2020-08-07",
+          "url": "http://uptransport.upsdc.gov.in/en-us/RTO-Code"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "kanpur",
+      "name": "Kanpur",
+      "stateId": "uttar-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "noida",
+      "name": "Noida",
+      "stateId": "uttar-pradesh",
+      "tier": 2,
+      "aka": [
+        "Gautam Buddha Nagar"
+      ]
+    },
+    {
+      "id": "ghaziabad",
+      "name": "Ghaziabad",
+      "stateId": "uttar-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "agra",
+      "name": "Agra",
+      "stateId": "uttar-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "varanasi",
+      "name": "Varanasi",
+      "stateId": "uttar-pradesh",
+      "tier": 2,
+      "aka": [
+        "Banaras",
+        "Benares"
+      ]
+    },
+    {
+      "id": "meerut",
+      "name": "Meerut",
+      "stateId": "uttar-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "prayagraj",
+      "name": "Prayagraj",
+      "stateId": "uttar-pradesh",
+      "tier": 2,
+      "aka": [
+        "Allahabad"
+      ]
+    },
+    {
+      "id": "indore",
+      "name": "Indore",
+      "stateId": "madhya-pradesh",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "MP-09",
+            "office": "Regional Transport Office, Indore",
+            "jurisdiction": "Indore district"
+          }
+        ],
+        "citation": {
+          "ref": "Vahan citizen services RTO list for Madhya Pradesh on parivahan.gov.in, which renders the code as MP9; the state department's own pages were unreachable and their archives carry no code table, so the ministry's portal is the official source used. Verified from the Wayback Machine snapshot dated 2022-11-30",
+          "url": "https://vahan.parivahan.gov.in/vahanservice/vahan/ui/statevalidation/homepage.xhtml"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "bhopal",
+      "name": "Bhopal",
+      "stateId": "madhya-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "jabalpur",
+      "name": "Jabalpur",
+      "stateId": "madhya-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "gwalior",
+      "name": "Gwalior",
+      "stateId": "madhya-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "ujjain",
+      "name": "Ujjain",
+      "stateId": "madhya-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "patna",
+      "name": "Patna",
+      "stateId": "bihar",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "BR-01",
+            "office": "District Transport Office, Patna",
+            "jurisdiction": "Patna district"
+          }
+        ],
+        "citation": {
+          "ref": "Transport Department, Government of Bihar, DTO code list published on the department site; the live site was unreachable, so verified from the Wayback Machine snapshot of that document dated 2026-05-21",
+          "url": "https://state.bihar.gov.in/transport/cache/16/03-Mar-26/SHOW_DOCS/DTO%20CODE.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "gaya",
+      "name": "Gaya",
+      "stateId": "bihar",
+      "tier": 2
+    },
+    {
+      "id": "bhagalpur",
+      "name": "Bhagalpur",
+      "stateId": "bihar",
+      "tier": 2
+    },
+    {
+      "id": "muzaffarpur",
+      "name": "Muzaffarpur",
+      "stateId": "bihar",
+      "tier": 2
+    },
+    {
+      "id": "ahmedabad",
+      "name": "Ahmedabad",
+      "stateId": "gujarat",
+      "tier": 1,
+      "aka": [
+        "Amdavad"
+      ],
+      "registration": {
+        "series": [
+          {
+            "code": "GJ-01",
+            "office": "Regional Transport Office, Ahmedabad",
+            "jurisdiction": "Ahmedabad city, the main office"
+          },
+          {
+            "code": "GJ-27",
+            "office": "Assistant Regional Transport Office, Ahmedabad East",
+            "jurisdiction": "eastern Ahmedabad city"
+          }
+        ],
+        "citation": {
+          "ref": "Commissionerate of Transport, Government of Gujarat, RTO and ARTO list; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2021-12-06",
+          "url": "https://cot.gujarat.gov.in/rto-arto-page.htm"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "surat",
+      "name": "Surat",
+      "stateId": "gujarat",
+      "tier": 2
+    },
+    {
+      "id": "vadodara",
+      "name": "Vadodara",
+      "stateId": "gujarat",
+      "tier": 2,
+      "aka": [
+        "Baroda"
+      ]
+    },
+    {
+      "id": "rajkot",
+      "name": "Rajkot",
+      "stateId": "gujarat",
+      "tier": 2
+    },
+    {
+      "id": "bhavnagar",
+      "name": "Bhavnagar",
+      "stateId": "gujarat",
+      "tier": 2
+    },
+    {
+      "id": "jamnagar",
+      "name": "Jamnagar",
+      "stateId": "gujarat",
+      "tier": 2
+    },
+    {
+      "id": "ludhiana",
+      "name": "Ludhiana",
+      "stateId": "punjab",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "PB-10",
+            "office": "Regional Transport Authority, Ludhiana",
+            "jurisdiction": "Ludhiana, the main district office"
+          },
+          {
+            "code": "PB-91",
+            "office": "SDM, Ludhiana East",
+            "jurisdiction": "Ludhiana East subdivision"
+          }
+        ],
+        "citation": {
+          "ref": "Punjab Transport Department, RTA wise and SDM wise list, which labels every registering authority with its code; the live site was unreachable, so verified from a 2026 Wayback Machine snapshot of that document",
+          "url": "https://www.punjabtransport.org/RTA%20wise%20&%20SDM%20wise.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "amritsar",
+      "name": "Amritsar",
+      "stateId": "punjab",
+      "tier": 2
+    },
+    {
+      "id": "jalandhar",
+      "name": "Jalandhar",
+      "stateId": "punjab",
+      "tier": 2
+    },
+    {
+      "id": "patiala",
+      "name": "Patiala",
+      "stateId": "punjab",
+      "tier": 2
+    },
+    {
+      "id": "mohali",
+      "name": "Mohali",
+      "stateId": "punjab",
+      "tier": 2,
+      "aka": [
+        "Sahibzada Ajit Singh Nagar"
+      ]
+    },
+    {
+      "id": "bathinda",
+      "name": "Bathinda",
+      "stateId": "punjab",
+      "tier": 2
+    },
+    {
+      "id": "kochi",
+      "name": "Kochi",
+      "stateId": "kerala",
+      "tier": 1,
+      "aka": [
+        "Cochin",
+        "Ernakulam"
+      ],
+      "registration": {
+        "series": [
+          {
+            "code": "KL-07",
+            "office": "Regional Transport Office, Ernakulam",
+            "jurisdiction": "Ernakulam, mainland Kochi"
+          },
+          {
+            "code": "KL-43",
+            "office": "Sub Regional Transport Office, Mattancherry",
+            "jurisdiction": "Mattancherry and Fort Kochi"
+          },
+          {
+            "code": "KL-39",
+            "office": "Sub Regional Transport Office, Tripunithura",
+            "jurisdiction": "Tripunithura"
+          }
+        ],
+        "citation": {
+          "ref": "Kerala Motor Vehicles Department, office code directory; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2020-11-11",
+          "url": "https://mvd.kerala.gov.in/index.php/directory/officecode"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "thiruvananthapuram",
+      "name": "Thiruvananthapuram",
+      "stateId": "kerala",
+      "tier": 2,
+      "aka": [
+        "Trivandrum"
+      ]
+    },
+    {
+      "id": "kozhikode",
+      "name": "Kozhikode",
+      "stateId": "kerala",
+      "tier": 2,
+      "aka": [
+        "Calicut"
+      ]
+    },
+    {
+      "id": "thrissur",
+      "name": "Thrissur",
+      "stateId": "kerala",
+      "tier": 2,
+      "aka": [
+        "Trichur"
+      ]
+    },
+    {
+      "id": "visakhapatnam",
+      "name": "Visakhapatnam",
+      "stateId": "andhra-pradesh",
+      "tier": 1,
+      "aka": [
+        "Vizag",
+        "Vishakhapatnam"
+      ]
+    },
+    {
+      "id": "vijayawada",
+      "name": "Vijayawada",
+      "stateId": "andhra-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "guntur",
+      "name": "Guntur",
+      "stateId": "andhra-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "tirupati",
+      "name": "Tirupati",
+      "stateId": "andhra-pradesh",
+      "tier": 2
+    },
+    {
+      "id": "itanagar",
+      "name": "Itanagar",
+      "stateId": "arunachal-pradesh",
+      "tier": 1
+    },
+    {
+      "id": "guwahati",
+      "name": "Guwahati",
+      "stateId": "assam",
+      "tier": 1,
+      "aka": [
+        "Gauhati"
+      ]
+    },
+    {
+      "id": "silchar",
+      "name": "Silchar",
+      "stateId": "assam",
+      "tier": 2
+    },
+    {
+      "id": "dibrugarh",
+      "name": "Dibrugarh",
+      "stateId": "assam",
+      "tier": 2
+    },
+    {
+      "id": "raipur",
+      "name": "Raipur",
+      "stateId": "chhattisgarh",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "CG-04",
+            "office": "Regional Transport Office, Raipur",
+            "jurisdiction": "Raipur city and district; office at Rawabata, Banjari Mandir, Bhanpuri"
+          }
+        ],
+        "citation": {
+          "ref": "Chhattisgarh Transport Department, official office list on cgtransport.gov.in, fetched live",
+          "url": "https://cgtransport.gov.in/OfficeList.aspx"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "bhilai",
+      "name": "Bhilai",
+      "stateId": "chhattisgarh",
+      "tier": 2
+    },
+    {
+      "id": "bilaspur",
+      "name": "Bilaspur",
+      "stateId": "chhattisgarh",
+      "tier": 2
+    },
+    {
+      "id": "panaji",
+      "name": "Panaji",
+      "stateId": "goa",
+      "tier": 1,
+      "aka": [
+        "Panjim"
+      ]
+    },
+    {
+      "id": "margao",
+      "name": "Margao",
+      "stateId": "goa",
+      "tier": 2,
+      "aka": [
+        "Madgaon"
+      ]
+    },
+    {
+      "id": "ranchi",
+      "name": "Ranchi",
+      "stateId": "jharkhand",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "JH-01",
+            "office": "District Transport Office, Ranchi",
+            "jurisdiction": "Ranchi district"
+          }
+        ],
+        "citation": {
+          "ref": "Transport Department, Government of Jharkhand, district codes and vehicle registration page; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2016-09-04",
+          "url": "http://jhtransport.gov.in/dist-codes-vehicle-registration.html"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "jamshedpur",
+      "name": "Jamshedpur",
+      "stateId": "jharkhand",
+      "tier": 2,
+      "aka": [
+        "Tatanagar"
+      ]
+    },
+    {
+      "id": "dhanbad",
+      "name": "Dhanbad",
+      "stateId": "jharkhand",
+      "tier": 2
+    },
+    {
+      "id": "shillong",
+      "name": "Shillong",
+      "stateId": "meghalaya",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "ML-05",
+            "office": "District Transport Office, Shillong",
+            "jurisdiction": "Shillong; one district transport office per district, this one at the East Khasi Hills headquarters"
+          }
+        ],
+        "citation": {
+          "ref": "Transport Department, Government of Meghalaya, Key Contacts district officers page listing every DTO with its code; the department relaunched its site in 2026 and the page is currently offline, so verified from the Wayback Machine capture of that official URL dated 2022-06-18",
+          "url": "https://megtransport.gov.in/Key_Contacts_DTO.html"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "aizawl",
+      "name": "Aizawl",
+      "stateId": "mizoram",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "MZ-01",
+            "office": "District Transport Officer (Registering Authority), Aizawl",
+            "jurisdiction": "registration of vehicles across Aizawl district, which covers the city"
+          }
+        ],
+        "citation": {
+          "ref": "Government of Mizoram, Transport Department Notification No. G.11016/6/2017-TRP dated 21-07-2020, on the department's own site",
+          "url": "https://transport.mizoram.gov.in/uploads/attachments/661dfa6ee05eb33a9cc1f8fddc45a4a8/dto-ra-la-notification.pdf"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "bhubaneswar",
+      "name": "Bhubaneswar",
+      "stateId": "odisha",
+      "tier": 1,
+      "aka": [
+        "Bhubaneshwar"
+      ]
+    },
+    {
+      "id": "cuttack",
+      "name": "Cuttack",
+      "stateId": "odisha",
+      "tier": 2
+    },
+    {
+      "id": "rourkela",
+      "name": "Rourkela",
+      "stateId": "odisha",
+      "tier": 2
+    },
+    {
+      "id": "srinagar",
+      "name": "Srinagar",
+      "stateId": "jammu-and-kashmir",
+      "tier": 1,
+      "registration": {
+        "series": [
+          {
+            "code": "JK-01",
+            "office": "Regional Transport Office, Srinagar",
+            "jurisdiction": "Srinagar district"
+          }
+        ],
+        "citation": {
+          "ref": "Jammu and Kashmir Motor Vehicles Department, general information page reproducing the SRO 195 district code table of 20-09-1994; the live site was unreachable, so verified from the Wayback Machine snapshot of that official page dated 2021-09-26",
+          "url": "https://jaktrans.nic.in/general.html"
+        },
+        "verifiedOn": "2026-08-09"
+      }
+    },
+    {
+      "id": "jammu",
+      "name": "Jammu",
+      "stateId": "jammu-and-kashmir",
+      "tier": 2
+    },
+    {
+      "id": "nellore",
+      "name": "Nellore",
+      "stateId": "andhra-pradesh",
+      "tier": 2,
+      "registration": {}
+    }
+  ]
+}

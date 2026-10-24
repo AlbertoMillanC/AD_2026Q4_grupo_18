@@ -1,0 +1,41 @@
+RESUMEN AE2 - MANEJO DE ARCHIVOS CSV, JSON Y TXT
+============================================================
+Fecha de generación: 2026-10-24 02:37:21
+
+1. URL de origen
+------------------------------------------------------------
+- CSV: https://huggingface.co/datasets/variantwise/indian-cars-variants/blob/main/data/catalogue.csv
+- JSON: https://huggingface.co/datasets/variantwise/indian-cars-variants/blob/main/data/road-tax.json
+
+2. Archivos importados
+------------------------------------------------------------
+- CSV: datos/originales/catalogue.csv (1281 registros)
+- JSON: datos/originales/road-tax.json (clave 'cities') (95 registros)
+
+3. Modificaciones realizadas
+------------------------------------------------------------
+CSV:
+  - Actualizar valor: variantId=sport-mt -> price: '17.99' => '18.49'
+  - Agregar registro: IN | INR | lakh | ex-showroom Delhi | Grupo 2 | Demo EV | grupo2-demo-ev | hatchback | 5 | Base | base | grupo2-base-ev | Base EV AT | Motor eléctrico
+  - Eliminar registros: brand=Tesla (2 filas)
+JSON:
+  - Actualizar valor: id=nagpur -> tier: 2 => 1
+  - Agregar registro: {'id': 'nellore', 'name': 'Nellore', 'stateId': 'andhra-pradesh', 'tier': 2, 'registration': {}}
+  - Eliminar registro: id='leh' (1 registros)
+
+4. Nuevos archivos guardados
+------------------------------------------------------------
+- CSV: datos/modificados/catalogo_carros_modificado.csv (1280 registros)
+- JSON: datos/modificados/impuestos_ciudades_modificado.json (95 registros)
+
+5. Clases y métodos utilizados
+------------------------------------------------------------
+- ManejadorCSV: importar, actualizar_valor, agregar_registro, eliminar_registros, guardar
+- ManejadorJSON: importar, actualizar_valor, agregar_registro, eliminar_registro, guardar
+- GeneradorResumenTXT: agregar_resultado, generar_texto, guardar
+
+6. Registros procesados
+------------------------------------------------------------
+- CSV: 1281 importados -> 1280 guardados
+- JSON: 95 importados -> 95 guardados
+- Total: 1376 importados -> 1375 guardados
