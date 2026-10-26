@@ -5,7 +5,6 @@ class DatasetSummarizer:
         self.df = df
 
     def generar_resumen(self, output_file: str = 'resumen.txt') -> None:
-    
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write("=== Resumen del DataFrame ===\n")
             f.write(f"Cantidad de filas: {self.df.shape[0]}\n")
@@ -19,3 +18,4 @@ class DatasetSummarizer:
             
             f.write("--- Estadísticas Descriptivas ---\n")
             f.write(self.df.describe(include='all').to_string() + "\n")
+            

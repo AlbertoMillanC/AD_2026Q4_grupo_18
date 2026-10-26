@@ -1,12 +1,12 @@
 === Resumen del DataFrame ===
-Cantidad de filas: 1000000
+Cantidad de filas: 1000
 Cantidad de columnas: 4
 
 --- Columnas y Tipos de Datos ---
-age           int64
-occupation      str
-industry        str
-country         str
+age            int64
+occupation    object
+industry      object
+country       object
 
 --- Conteo de Valores Nulos ---
 age           0
@@ -15,15 +15,15 @@ industry      0
 country       0
 
 --- Estadísticas Descriptivas ---
-                   age      occupation        industry         country
-count   1000000.000000         1000000         1000000         1000000
-unique             NaN             105              87               1
-top                NaN  Does not apply  Does not apply  United Kingdom
-freq               NaN          387512          387512         1000000
-mean         49.003076             NaN             NaN             NaN
-std          18.891638             NaN             NaN             NaN
-min          18.000000             NaN             NaN             NaN
-25%          33.000000             NaN             NaN             NaN
-50%          48.000000             NaN             NaN             NaN
-75%          63.000000             NaN             NaN             NaN
-max          99.000000             NaN             NaN             NaN
+                age      occupation        industry         country
+count   1000.000000            1000            1000            1000
+unique          NaN              92              70               1
+top             NaN  Does not apply  Does not apply  United Kingdom
+freq            NaN             377             377            1000
+mean      48.749000             NaN             NaN             NaN
+std       18.712032             NaN             NaN             NaN
+min       18.000000             NaN             NaN             NaN
+25%       32.000000             NaN             NaN             NaN
+50%       48.000000             NaN             NaN             NaN
+75%       63.000000             NaN             NaN             NaN
+max       98.000000             NaN             NaN             NaN
