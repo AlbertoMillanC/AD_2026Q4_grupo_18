@@ -1,29 +1,31 @@
 === Resumen del DataFrame ===
-Cantidad de filas: 1000
-Cantidad de columnas: 4
+Cantidad de filas: 783
+Cantidad de columnas: 5
 
 --- Columnas y Tipos de Datos ---
-age            int64
-occupation    object
-industry      object
-country       object
+edad               int64
+occupation        object
+industry          object
+country           object
+categoria_edad    object
 
 --- Conteo de Valores Nulos ---
-age           0
-occupation    0
-industry      0
-country       0
+edad              0
+occupation        0
+industry          0
+country           0
+categoria_edad    0
 
 --- Estadísticas Descriptivas ---
-                age      occupation        industry         country
-count   1000.000000            1000            1000            1000
-unique          NaN              92              70               1
-top             NaN  Does not apply  Does not apply  United Kingdom
-freq            NaN             377             377            1000
-mean      48.749000             NaN             NaN             NaN
-std       18.712032             NaN             NaN             NaN
-min       18.000000             NaN             NaN             NaN
-25%       32.000000             NaN             NaN             NaN
-50%       48.000000             NaN             NaN             NaN
-75%       63.000000             NaN             NaN             NaN
-max       98.000000             NaN             NaN             NaN
+              edad      occupation        industry         country categoria_edad
+count   783.000000             783             783             783            783
+unique         NaN              87              69               1              2
+top            NaN  Does not apply  Does not apply  United Kingdom         Adulto
+freq           NaN             313             313             783            465
+mean     55.475096             NaN             NaN             NaN            NaN
+std      15.316827             NaN             NaN             NaN            NaN
+min      31.000000             NaN             NaN             NaN            NaN
+25%      42.000000             NaN             NaN             NaN            NaN
+50%      55.000000             NaN             NaN             NaN            NaN
+75%      67.000000             NaN             NaN             NaN            NaN
+max      98.000000             NaN             NaN             NaN            NaN
