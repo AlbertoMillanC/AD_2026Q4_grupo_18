@@ -1,6 +1,6 @@
 # AD_2026Q4_grupo_18
 
-Repositorio del grupo 2 para el proyecto de Analítica de Datos 2026 - cuarto trimestre.
+Repositorio del grupo 18 para el proyecto de Analítica de Datos 2026 - cuarto trimestre.
 
 ## Colaboradores
 
